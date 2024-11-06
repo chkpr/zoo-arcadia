@@ -1,20 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PageController!{% endblock %}
+
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<div class="d-flex align-items-end">
+    <div class="position-absolute d-flex flex-column align-items-start pb-5 mb-3 ps-5 ms-5">
+        <h1 class="display-3 fw-bold text-light">Zoo Arcadia</h1>
+            <div class="">
+                <h2 class="display-6 fw-bold text-light">Un écoparc animalier aux portes de Brocéliande.</h2>
+                    <div class="">
+                        <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Découvrir</button>
+                        
+                    </div>
+            </div>
+    </div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <img src="{{ asset ('build/images/cover_index.jpg')}}" class="w-100 h-100 img-fluid" alt="Un tigre allongé sur une large souche d'abre coupé">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/xampp/htdocs/zoo_arcadia/src/Controller/PageController.php</code></li>
-        <li>Your template at <code>C:/xampp/htdocs/zoo_arcadia/templates/page/index.html.twig</code></li>
-    </ul>
-</div>
+  </div>
 {% endblock %}
