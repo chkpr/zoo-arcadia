@@ -1,3 +1,16 @@
 $primary: #eeaf26;
+$secondary: #ffffff;
 
 @import "~bootstrap/scss/bootstrap";
+
+.nav-background {
+    background: linear-gradient(#0c0c0c, rgba(250, 250, 251, 0));
+    background-color: #052219;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.footer-background {
+    background: linear-gradient(rgba(250, 250, 251, 0), #0c0c0c);
+    background-color: #052219;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
