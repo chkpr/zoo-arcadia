@@ -34,6 +34,11 @@ class Reviews
         return $this->id;
     }
 
+    public function __toString()
+    {
+        return $this->getAuthor();
+    }
+
     public function getAuthor(): ?string
     {
         return $this->author;

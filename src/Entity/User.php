@@ -58,6 +58,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->animals = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return $this->getUserIdentifier();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
