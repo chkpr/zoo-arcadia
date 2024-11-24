@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{habitat.name}}{% endblock %}
+
+{% block body %}
+
+<div class="d-flex align-items-end">
+    <div class="position-absolute d-flex flex-column align-items-start pb-5 mb-3 ps-5 ms-5">
+        <h1 class="display-3 fw-bold text-light">{{habitat.name}}</h1>
+            <div class="">
+                <h2 class="display-6 fw-bold text-light">{{habitat.description}}</h2>
+                    <div class="">
+                        <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Découvrir</button>
+                        
+                    </div>
+            </div>
+    </div>
+
+    {% if habitat.imageName %}
+        <img src="{{ vich_uploader_asset(habitat, 'imageFile') }}" class="w-100 h-100 img-fluid" alt="{{habitat.name}}">
+    {% else %}
+        <img src="{{ asset('build/images/default-habitat.png') }}" class="card-img-top" alt="Photo manquante">
+    {% endif %}
+
+</div>
+
+
+
+    
+
+{% endblock %}

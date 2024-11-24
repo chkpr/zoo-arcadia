@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Habitats;
 use App\Repository\HabitatsRepository;
+use ContainerBtSLouf\getVetVisitCrudControllerconfigureResponseParametersService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -18,6 +20,17 @@ class HabitatsController extends AbstractController
 
         return $this->render('habitats/index.html.twig', [
             'habitats' => $habitats,
+        ]);
+        
+    }
+
+
+
+    #[Route('/habitats/{id}', name: 'app_habitats_show')]
+    public function show(Habitats $habitat): Response
+    {
+            return $this->render('habitats/show.html.twig', [
+            'habitat' => $habitat,
         ]);
     }
 }
