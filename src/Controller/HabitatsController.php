@@ -7,18 +7,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-class PageController extends AbstractController
+class HabitatsController extends AbstractController
 {
-    #[Route('/', name: 'app_home')]
+    #[Route('/habitats', name: 'app_habitats')]
     public function index(HabitatsRepository $habitatsRepository): Response
     {
-        $habitats = $habitatsRepository->findBy([], ['id' => 'ASC'],3);
+        $habitats = $habitatsRepository->findBy([], ['id' => 'ASC']);
 
-        $websiteName = 'Zoo Arcadia';
-        return $this->render('page/index.html.twig', [
-            'websiteName' => $websiteName,
+        dump($habitats);
+
+        return $this->render('habitats/index.html.twig', [
             'habitats' => $habitats,
-
         ]);
     }
 }
