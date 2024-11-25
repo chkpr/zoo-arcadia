@@ -1,0 +1,13 @@
+<div class="col-md-4 my-2 d-flex">
+    <div class="card w-100">
+    {% if animal.imageName %}
+        <img src="{{ vich_uploader_asset(animal, 'imageFile') }}" class="card-img-top" alt="photo de {{ animal.name }}">
+    {% else %}
+        <img src="{{ asset('build/images/default-habitat.png') }}" class="card-img-top" alt="photo de {{ animal.name }}">
+    {% endif %}
+    <div class="card-body">
+        <h5 class="card-title">{{ animal.name }}</h5>
+        <a href="{{ path('app_animals_habitat', {habitat: animal.habitat}) }}" class="btn btn-primary">Découvrir</a>
+    </div>
+    </div>
+</div>

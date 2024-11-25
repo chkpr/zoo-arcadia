@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Animaux{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row text-center">
+        <h2 class="display-4 fw-bold my-5 py-5">Découvrir les animaux de cet habitat</h2>
+        {% for animal in animals %}
+        {% include "partials/_card.animal.html.twig" %}
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
