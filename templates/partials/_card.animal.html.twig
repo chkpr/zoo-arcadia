@@ -7,7 +7,7 @@
     {% endif %}
     <div class="card-body">
         <h5 class="card-title">{{ animal.name }}</h5>
-        <a href="{{ path('app_animals_habitat', {habitat: animal.habitat}) }}" class="btn btn-primary">Découvrir</a>
+        <a href="{{ path('app_animals_show', {'id': animal.id}) }}" class="btn btn-primary">Découvrir</a>
     </div>
     </div>
 </div>

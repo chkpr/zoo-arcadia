@@ -26,13 +26,39 @@
 
 <div class="container">
     <div class="row text-center">
-        <h2 class="display-4 fw-bold my-5 py-5">Habitats</h2>
-        {% for habitat in habitats %}
+        <h2 class="display-4 fw-bold my-5 py-5">Découvrir les animaux de cet habitat</h2>
+
+    </div>
+</div>
+
+    {% if habitat.id == 1 %}
+    <div class="container">
+    <div class="row text-center">
+        
+        {% for animal in animals %}
         {% include "partials/_card.animal.html.twig" %}
         {% endfor %}
     </div>
 </div>
 
-    
+    {% elseif habitat.id == 2 %}
+    <div class="container">
+    <div class="row text-center">
+        
+        {% for animal in animals %}
+        {% include "partials/_card.animal.html.twig" %}
+        {% endfor %}
+    </div>
+
+    {% elseif habitat.id == 3 %}
+    <div class="container">
+    <div class="row text-center">
+        
+        {% for animal in animals %}
+        {% include "partials/_card.animal.html.twig" %}
+        {% endfor %}
+    </div>
+
+    {% endif %}
 
 {% endblock %}

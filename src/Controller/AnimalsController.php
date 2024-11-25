@@ -23,25 +23,19 @@ class AnimalsController extends AbstractController
         ]);
     }
 
-    #[Route('/animals/{habitat}', name: 'app_animals_habitat')]
-    public function animalHabitat(AnimalsRepository $animalsRepository): Response
+    #[Route('/animals/{id}', name: 'app_animals_show')]
+    public function show(Animals $animal): Response
     {
-        $animals = $animalsRepository->findAll();
 
-        dump($animals);
-        return $this->render('animals/show.animals.html.twig', [
-            'animals' => $animals,
+        dump($animal);
+
+        return $this->render('./partials/_page.animal.html.twig', [
+            'animal' => $animal,
         ]);
     }
 
 
-    #[Route('animals/{id}', name: "app_animals_show")]
-    public function show(Animals $animal): Response
-    {
-            return $this->render('./partials/_card.animal.html.twig', [
-                'animal' => $animal,
-            ]);
-    }
+
 
 
 }
