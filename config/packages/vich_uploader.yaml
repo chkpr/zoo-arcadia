@@ -7,7 +7,24 @@ vich_uploader:
             upload_destination: '%kernel.project_dir%/public/images/habitat'
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
 
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true
+
         animal:
             uri_prefix: /images/animal
             upload_destination: '%kernel.project_dir%/public/images/animal'
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true
+
+        service:
+            uri_prefix: /images/service
+            upload_destination: '%kernel.project_dir%/public/images/service'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+
+            inject_on_load: false
+            delete_on_update: false
+            delete_on_remove: true
