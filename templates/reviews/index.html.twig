@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Avis{% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+    <h1 class="display-4 fw-bold text-center my-5 py-5">Avis</h1>
+    <p class="fs-4 text-center mb-5 pb-5"> Vos avis nous sont précieux!<br>Ils nous aident à améliorer encore et toujours l'expérience de votre visite.<br>Laissez-nous un message et dites-nous ce que vous en avez pensé.</p>
+
+    <div class="container row">
+        {{ include('partials/_form.html.twig')}}
+    </div>
+
+
+{% endblock %}
