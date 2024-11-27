@@ -29,7 +29,10 @@ class Reviews
     #[ORM\ManyToOne(inversedBy: 'reviews')]
     private ?User $user = null;
 
-
+    public function __toString()
+    {
+        return $this->getContent();
+    }
 
     public function getId(): ?int
     {

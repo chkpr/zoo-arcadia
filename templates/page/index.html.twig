@@ -76,6 +76,43 @@
     <img src="{{ asset ('build/images/lionne.png')}}" class="w-100 h-100 img-fluid" alt="Deux lionnes allongées sur un rocher, l'une de face et l'autre de dos">
 
   </div>
+ 
+  <div class="mt-5 pt-5 d-flex align-items-center justify-content-center md-4 w-auto">
+  <div class="position-absolute d-flex flex-column align-items-center pb-5 mb-3 px-5 mx-5 bg-dark bg-opacity-75 rounded-4 w-50 h-50">
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      
+        {% for review in reviews %}
+        <div class="carousel-item active">
+            <p class="fs-4 fw-italic text-light text-center mx-5 px-5 mt-5 pt-5 pb-2"> {{ review.content }}</p>
+            <div class="">
+                <p class="fs-6 fw-bold text-light text-center">{{ review.author }}</p>
+                   
+            </div>
+        </div>
+        {% endfor %}
+      </div>
+      
+      </div>
+  
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+ <div class="py-5 d-flex justify-content-center">
+                        
+                        <a href="{{ path('app_reviews') }}" class="btn btn-primary">Ajouter un avis</a>
+                    </div>
+  </div>
+
+
+<img src="{{ asset ('build/images/lionne.png')}}" class="w-100 h-100 img-fluid" alt="Deux lionnes allongées sur un rocher, l'une de face et l'autre de dos">
+
+  </div>
 
   </section>
 {% endblock %}
