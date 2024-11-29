@@ -44,7 +44,7 @@ class EmployeeDashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
+        yield MenuItem::linkToDashboard('Dashboard Employé', 'fa fa-home');
         yield MenuItem::linkToCrud('Services', 'fa fa-calendar-check', Services::class);
         yield MenuItem::linkToCrud('Avis', 'fa-regular fa-star', Reviews::class);
     }
