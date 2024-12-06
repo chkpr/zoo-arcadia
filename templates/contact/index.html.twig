@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+    <h1 class="display-4 fw-bold text-center my-5 py-5">Contact</h1>
+    <p class="fs-4 text-center mb-5 pb-5"> Une question, un besoin, un problème?<br>N'hésitez pas à nous contacter pour nous faire part de toutes vos remarques.<br>Nos équipes vous répondrons dans les meilleurs délais.</p>
+
+
+{{ form_start(form) }}
+
+{{ form_widget(form)}}
+
+<button class="btn">Envoyer</button>
+
+{{ form_end(form) }}
+
+{% endblock %}
+
