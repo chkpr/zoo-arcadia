@@ -1,3 +1,7 @@
+
+
+
+
 <div class="col-md-4 my-2 d-flex">
     <div class="card w-100">
     {% if animal.imageName %}
@@ -7,7 +11,9 @@
     {% endif %}
     <div class="card-body">
         <h5 class="card-title">{{ animal.name }}</h5>
-        <a href="{{ path('app_animals_show', {'id': animal.id}) }}" class="btn btn-primary">Découvrir</a>
+        <button class="btn btn-primary stats" id="{{ animal.id }}"><a href="{{ path('app_animals_show', {'id': animal.id}) }}" >Découvrir</a></button>
     </div>
     </div>
 </div>
+
+
