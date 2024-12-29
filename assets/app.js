@@ -7,18 +7,15 @@ import './bootstrap.js';
  */
 import './styles/app.scss';
 
-
-
 console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
-
-
 
 let test = document.getElementsByClassName("stats");
 for (let i = 0 ; i < test.length; i++) {
     test[i].addEventListener("click", function() {
-        console.log(test.item(i).id);        
-            });
-};
+        console.log(test.item(i).id);
+       
+
+    })};
 
 const $ = require('jquery');
 require('bootstrap');
