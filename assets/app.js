@@ -6,19 +6,17 @@ import './bootstrap.js';
  * which should already be in your base.html.twig.
  */
 import './styles/app.scss';
-import getAnimal from './animal.js';
+
 
 
 console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
 
 
 
- let test = document.getElementsByClassName("stats");
+let test = document.getElementsByClassName("stats");
 for (let i = 0 ; i < test.length; i++) {
     test[i].addEventListener("click", function() {
-        console.log(test.item(i).id);
-        
-        console.log(getAnimal(test.item(i).id))
+        console.log(test.item(i).id);        
             });
 };
 

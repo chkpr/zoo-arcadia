@@ -25,7 +25,7 @@ class AnimalStatsController extends AbstractController
         $this->logger = $logger;
     }
 
-    #[Route('/', name: 'animalstats_index', methods: ['GET'])]
+    #[Route('/animalstats', name: 'animalstats_index', methods: ['GET'])]
     public function index(Request $request): Response
     {   
         return $this->render('animalstats/index.html.twig');
