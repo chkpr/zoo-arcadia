@@ -24,8 +24,10 @@ class AnimalStats
     public string $name;
 
      #[ODM\Field]
-    public string $views;
+    public int $views;
 
+
+  
     /**
      * Get the value of id
      */ 

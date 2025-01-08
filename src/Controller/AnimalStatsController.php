@@ -44,4 +44,6 @@ class AnimalStatsController extends AbstractController
 
         return $this->render('animalstats/show.html.twig', ['animalstats' => $animalstats]);
     }
+
+
 }
