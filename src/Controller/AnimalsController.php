@@ -31,7 +31,6 @@ class AnimalsController extends AbstractController
     {
         $animals = $animalsRepository->findBy([], ['id' => 'ASC']);
 
-        dump($animals);
 
         return $this->render('animals/index.html.twig', [
             'animals' => $animals,
@@ -44,7 +43,6 @@ class AnimalsController extends AbstractController
     public function show(#[MapEntity(id: 'id')] Animals $animal, int $id): Response
     {
 
-      $animalId =(dump($id));
 
         $updateViews = $this->dm->createQueryBuilder(AnimalStats::class)
            ->findAndUpdate()
@@ -56,7 +54,6 @@ class AnimalsController extends AbstractController
 
 
 
-                dump($animal);
 
         return $this->render('./partials/_page.animal.html.twig', [
             'animal' => $animal,

@@ -46,7 +46,6 @@ class AppCustomAuthenticator extends AbstractLoginFormAuthenticator
 {
 
     $targetPath = $this->getTargetPath($request->getSession(), $firewallName);
-    dump($targetPath); // à supprimer après debug
     // Efface le targetPath pour éviter les redirections parasites
     $this->removeTargetPath($request->getSession(), $firewallName);
 

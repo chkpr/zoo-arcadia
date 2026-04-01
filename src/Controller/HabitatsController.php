@@ -21,7 +21,6 @@ class HabitatsController extends AbstractController
     {
         $habitats = $habitatsRepository->findBy([], ['id' => 'ASC']);
 
-        dump($habitats);
 
         return $this->render('habitats/index.html.twig', [
             'habitats' => $habitats,
@@ -36,7 +35,6 @@ class HabitatsController extends AbstractController
     {
 
             $animals = $animalsRepository->findBy(['habitat' => $habitat]);
-            dump($animals);
 
             return $this->render('habitats/show.html.twig', [
             'habitat' => $habitat,
