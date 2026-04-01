@@ -23,7 +23,7 @@ class Reviews
     #[ORM\Column(type: Types::SMALLINT)]
     private ?int $rate = null;
 
-    #[ORM\Column]
+    #[ORM\Column(type: Types::BOOLEAN)]
     private ?bool $status = null;
 
     #[ORM\ManyToOne(inversedBy: 'reviews')]

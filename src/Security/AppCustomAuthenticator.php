@@ -43,15 +43,33 @@ class AppCustomAuthenticator extends AbstractLoginFormAuthenticator
     }
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
-    {
-        if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
-            return new RedirectResponse($targetPath);
-        } 
+{
 
-        // For example:
-        // return new RedirectResponse($this->urlGenerator->generate('some_route'));
-        throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+    $targetPath = $this->getTargetPath($request->getSession(), $firewallName);
+    dump($targetPath); // à supprimer après debug
+    // Efface le targetPath pour éviter les redirections parasites
+    $this->removeTargetPath($request->getSession(), $firewallName);
+
+    if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
+        return new RedirectResponse($targetPath);
     }
+
+    // Redirige selon le rôle
+    if (in_array('ROLE_ADMIN', $token->getRoleNames())) {
+        return new RedirectResponse($this->urlGenerator->generate('admin'));
+    }
+
+    if (in_array('ROLE_EMPLOYE', $token->getRoleNames())) {
+        return new RedirectResponse($this->urlGenerator->generate('employee'));
+    }
+
+    if (in_array('ROLE_VETERINAIRE', $token->getRoleNames())) {
+        return new RedirectResponse($this->urlGenerator->generate('vet'));
+    }
+
+    // Redirection par défaut
+    return new RedirectResponse($this->urlGenerator->generate('app_home'));
+}
 
     protected function getLoginUrl(Request $request): string
     {

@@ -7,10 +7,10 @@
 <div class="d-flex align-items-end">
     <div class="position-absolute d-flex flex-column align-items-start pb-5 mb-3 ps-5 ms-5">
         <h1 class="display-3 fw-bold text-light">{{animal.name}}</h1>
-            <div class="">
+            <div class="container">
                 <h2 class="display-6 fw-bold text-light">{{animal.description}}</h2>
                     <div class="">
-                        <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Retour</button>
+                        <a href="{{ path('app_habitats_show', {'id': animal.habitat.id}) }}" class="btn btn-primary">Retour</a>
                         
                     </div>
             </div>

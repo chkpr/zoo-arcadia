@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class ContactController extends AbstractController
 {
-    #[Route('/contact')]
+    #[Route('/contact', name: 'app_contact')]
     public function sendMail(Request $request, MailerInterface $mailer):Response
     {
             $contact = new Contact();
@@ -22,10 +22,11 @@ class ContactController extends AbstractController
             $form->handleRequest($request);
 
                 if ($form->isSubmitted() && $form->isValid()) {
-                    $address = $contact->getEmail();
-                    $message = $contact->getMessage();
                     $name = $contact->getName();
                     $firstname = $contact->getFirstname();
+                    $address = $contact->getEmail();
+                    $message = $contact->getMessage();
+                    $contact = $form->getData();
 
 
                         $email = (new Email())
@@ -36,7 +37,7 @@ class ContactController extends AbstractController
 
                         $mailer->send($email);
 
-                        
+                        return $this->redirectToRoute('app_contact_sent');
                     
             }   
             
@@ -47,6 +48,12 @@ class ContactController extends AbstractController
             
         }
 
+        #[Route('/contact/sent', name: 'app_contact_sent')]
+        public function show(): Response
+        {
+         
+            return $this->render('contact/sent.html.twig');
+        }
 
        
 }

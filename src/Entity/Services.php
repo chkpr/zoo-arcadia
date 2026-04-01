@@ -25,7 +25,7 @@ class Services
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $OpeningHours = null;
 
     /**
@@ -85,7 +85,7 @@ class Services
         return $this->OpeningHours;
     }
 
-    public function setOpeningHours(string $OpeningHours): static
+    public function setOpeningHours(?string $OpeningHours): static
     {
         $this->OpeningHours = $OpeningHours;
 

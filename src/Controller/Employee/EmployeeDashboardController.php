@@ -5,6 +5,7 @@ namespace App\Controller\Employee;
 use App\Entity\Animals;
 use App\Entity\Reviews;
 use App\Entity\Services;
+use App\Entity\User;
 use App\Entity\VetVisit;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -47,5 +48,6 @@ class EmployeeDashboardController extends AbstractDashboardController
         yield MenuItem::linkToDashboard('Dashboard Employé', 'fa fa-home');
         yield MenuItem::linkToCrud('Services', 'fa fa-calendar-check', Services::class);
         yield MenuItem::linkToCrud('Avis', 'fa-regular fa-star', Reviews::class);
+        yield MenuItem::linkToCrud('Utilisateurs', 'fa-solid fa-users', User::class);
     }
 }

@@ -38,7 +38,7 @@ class UserCrudController extends AbstractCrudController
             IdField::new('id')->hideOnForm(),
             EmailField::new('email'),
             ChoiceField::new('roles', 'Catégorie')
-            ->setChoices(['VETERINAIRE' => 'ROLE_VETERINAIRE', 'EMPLOYE' => 'ROLE_EMPLOYE'])
+            ->setChoices(['VETERINAIRE' => 'ROLE_VETERINAIRE', 'EMPLOYE' => 'ROLE_EMPLOYE', 'ADMIN' => 'ROLE_ADMIN'])
             ->allowMultipleChoices()
             ->renderExpanded(),
         ];

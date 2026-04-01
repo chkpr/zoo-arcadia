@@ -5,12 +5,12 @@
 {% block body %}
 
 <div class="d-flex align-items-end">
-    <div class="position-absolute d-flex flex-column align-items-start pb-5 mb-3 ps-5 ms-5">
-        <h1 class="display-3 fw-bold text-light">{{service.name}}</h1>
+    <div class="position-absolute d-flex flex-column align-items-start pb-5 px-3 overlay">
+        <h1 class="display-3 fw-bold text-light ps-5 ms-5 z-50">{{service.name}}</h1>
             <div class="">
-                <h2 class="display-6 fw-bold text-light">{{service.description}}</h2>
-                    <div class="">
-                        <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Découvrir</button>
+                <h2 class="display-6 fw-bold text-light ps-5 ms-5 z-50">{{service.description}}</h2>
+                    <div class="ps-5 ms-5 z-50">
+                        <a href="{{ path('app_services_show', {'id': service.id}) }}#decouvrir" class="btn btn-primary">Découvrir</a>
                         
                     </div>
             </div>
@@ -28,8 +28,65 @@
     <div class="row text-center">
         <h2 class="display-4 fw-bold my-5 py-5">{{ service.name }}</h2>
         <p>{{ service.OpeningHours }}</p>
-
+    <div id="decouvrir">
     </div>
+
+    <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="auto" src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmVzdGF1cmFudCUyMGZhbWlseXxlbnwwfDB8MHx8fDI%3D" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Repas et snacks</text></img>
+            <div class="card-body">
+              <p class="card-text">Des repas délicieux et des snacks sains et variés pour satisfaire les petites et les grandes faims de toute la famille.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="auto" src="https://images.unsplash.com/photo-1505275350441-83dcda8eeef5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHJlc3RhdXJhbnR8ZW58MHwwfDB8fHwy" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Ouvert tous les jours</text></img>
+            <div class="card-body">
+              <p class="card-text">Pour faire une pause durant votre visite, du petit-déjeuner au dîner, le restaurant vous accueille sans interruption. Venez vous rassasier!</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="auto" src="https://images.unsplash.com/photo-1647069325808-911db781ec93?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjM3fHxyZXN0YXVyYW50JTIwZm9vZCUyMGtpZHMlMjBiaXJ0aGRheXxlbnwwfDB8MHx8fDI%3D" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Menu enfant</text></img>
+            <div class="card-body">
+              <p class="card-text">Des plats délicieux, sucrés et salés qui remportent l'unanimité! Chaque jour, des animations et des jeux égaient votre pause à l'heure du repas.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
 </div>
 
 

@@ -5,19 +5,21 @@
 {% block body %}
 
 <div class="d-flex align-items-end">
-    <div class="position-absolute d-flex flex-column align-items-start pb-5 mb-3 ps-5 ms-5">
-        <h1 class="display-3 fw-bold text-light">Services</h1>
+    <div class="position-absolute d-flex flex-column align-items-start pb-5 overlay">
+        <h1 class="display-3 fw-bold text-light ps-5 ms-5 z-50">Services</h1>
             <div class="">
-                <h2 class="display-6 fw-bold text-light">Découvrez tous les services du zoo Arcadia pour organiser votre visite.</h2>
-                    <div class="">
-                        <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Découvrir</button>
+                <h2 class="display-6 fw-bold text-light ps-5 ms-5 z-50">Découvrez tous les services du zoo Arcadia pour organiser votre visite.</h2>
+                    <div class=" ps-5 ms-5 z-50">
+                        <a href="{{ path('app_services') }}#decouvrir" class="btn btn-primary">Découvrir</a>
                         
                     </div>
             </div>
     </div>
 
-    <img src="{{ asset ('build/images/cover_services.png')}}" class="w-100 h-100 img-fluid" alt="Un guépard allongé dans un arbre vu en gros plan">
 
+    <div class="z-0">
+    <img src="{{ asset ('build/images/cover_services.png')}}" class="w-100 h-100 img-fluid" alt="La locomotive du petit train du zoo et son conducteur à la fenêtre">
+    </div>
   </div>
 
 <div class="container">
@@ -27,6 +29,7 @@
         {% include "partials/_section.services.html.twig" %}
         {% endfor %}
     </div>
+    <div id="decouvrir"></div>
 </div>
 
 {% endblock %}

@@ -10,7 +10,7 @@
             <div class="">
                 <h2 class="display-6 fw-bold text-light">Un écoparc animalier aux portes de Brocéliande.</h2>
                     <div class="">
-                        <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Découvrir</button>
+                        <a href="{{ path('app_home') }}#decouvrir" class="btn btn-primary">Découvrir</a>
                         
                     </div>
             </div>
@@ -26,7 +26,7 @@
   <section class="container">
   <h2 class="display-4 fw-bold text-center my-5 py-5">Habitats</h2>
 
-  <div class="container">
+  <div class="container" id="decouvrir">
     <div class="row text-center">
         {% for habitat in habitats %}
         {% include "partials/_section.habitats.html.twig" %}
@@ -36,7 +36,7 @@
 
 
   <div class="d-flex justify-content-center">
-    <a href="#" class="btn btn-primary my-5">Voir tous les habitats</a>
+    <a href="{{ path('app_habitats') }}" class="btn btn-primary my-5">Voir tous les habitats</a>
   </div>
 
   </section>
@@ -62,33 +62,21 @@
     <section>
   <h2 class="display-4 fw-bold text-center my-5 py-5">Avis</h2>
 
-  <div class="d-flex align-items-center justify-content-center">
-    <div class="position-absolute d-flex flex-column align-items-center pb-5 mb-3 px-5 mx-5 bg-dark bg-opacity-75 rounded-4">
-        <p class="fs-4 fw-italic text-light text-center mx-5 px-5 mt-5 pt-5 pb-2">Une visite extraordinaire dans un cadre exceptionnel</p>
-            <div class="">
-                <p class="fs-6 fw-bold text-light text-center">Mireille</p>
-                    <div class="py-5">
-                        <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Ajouter un avis</button>
-                        
-                    </div>
-            </div>
-    </div>
 
-    <img src="{{ asset ('build/images/lionne.png')}}" class="w-100 h-100 img-fluid" alt="Deux lionnes allongées sur un rocher, l'une de face et l'autre de dos">
-
-  </div>
- 
   <div class="mt-5 pt-5 d-flex align-items-center justify-content-center md-4 w-auto">
-  <div class="position-absolute d-flex flex-column align-items-center pb-5 mb-3 px-5 mx-5 bg-dark bg-opacity-75 rounded-4 w-50 h-50">
-    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
+  <div class="position-absolute d-flex flex-column pb-5 mb-5 px-5 mx-5 bg-dark bg-opacity-75 rounded-4 w-50 h-50">
+    <div id="carouselExampleAutoplaying" class="carousel slide m-auto" data-bs-ride="carousel">
+    <div class="carousel-inner style="height:100px;">
       
         {% for review in reviews %}
         <div class="carousel-item active">
-            <p class="fs-4 fw-italic text-light text-center mx-5 px-5 mt-5 pt-5 pb-2"> {{ review.content }}</p>
+        <div class="d-flex flex-column justify-content-start">
+            <div>
+            <p class="fs-4 fw-italic text-light text-center my-5 text-nowrap text-break"> {{ review.content }}</p>
+            </div>
             <div class="">
                 <p class="fs-6 fw-bold text-light text-center">{{ review.author }}</p>
-                   
+            </div>
             </div>
         </div>
         {% endfor %}
@@ -96,15 +84,15 @@
       
       </div>
   
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+  <button class="carousel-control-prev mt-5" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+  <button class="carousel-control-next mt-5" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
- <div class="py-5 d-flex justify-content-center">
+ <div class="d-flex justify-content-center">
                         
                         <a href="{{ path('app_reviews') }}" class="btn btn-primary">Ajouter un avis</a>
                     </div>

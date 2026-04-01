@@ -19,7 +19,7 @@ class PageController extends AbstractController
 
         $services = $servicesRepository->findBy([], ['id' => 'ASC'],3);
 
-        $reviews = $reviewsRepository->findBy(['status' => 'true'], ['id' => 'ASC'],3);
+        $reviews = $reviewsRepository->findBy(['status' => 'true'], ['id' => 'DESC'],3);
         dump($reviews);
 
         $websiteName = 'Zoo Arcadia';

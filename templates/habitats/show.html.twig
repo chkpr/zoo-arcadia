@@ -5,12 +5,12 @@
 {% block body %}
 
 <div class="d-flex align-items-end">
-    <div class="position-absolute d-flex flex-column align-items-start pb-5 mb-3 ps-5 ms-5">
-        <h1 class="display-3 fw-bold text-light">{{habitat.name}}</h1>
+    <div class="position-absolute d-flex flex-column align-items-start pb-5 overlay">
+        <h1 class="display-3 fw-bold text-light ps-5 ms-5 z-50">{{habitat.name}}</h1>
             <div class="">
-                <h2 class="display-6 fw-bold text-light">{{habitat.description}}</h2>
-                    <div class="">
-                        <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Découvrir</button>
+                <h2 class="display-6 fw-bold text-light px-5 mx-5 z-50">{{habitat.description}}</h2>
+                    <div class="ps-5 ms-5 z-50">
+                        <a href="{{ path('app_habitats_show', {'id': habitat.id}) }}#decouvrir" class="btn btn-primary">Découvrir</a>
                         
                     </div>
             </div>
@@ -33,31 +33,37 @@
 
     {% if habitat.id == 1 %}
     <div class="container">
-    <div class="row text-center">
+    <div class="row text-center" id="decouvrir">
         
         {% for animal in animals %}
         {% include "partials/_card.animal.html.twig" %}
         {% endfor %}
+        
     </div>
-</div>
+    
+
 
     {% elseif habitat.id == 2 %}
     <div class="container">
-    <div class="row text-center">
+    <div class="row text-center" id="decouvrir">
         
         {% for animal in animals %}
         {% include "partials/_card.animal.html.twig" %}
         {% endfor %}
+        
     </div>
+    
 
     {% elseif habitat.id == 3 %}
     <div class="container">
-    <div class="row text-center">
+    <div class="row text-center" id="decouvrir">
         
         {% for animal in animals %}
         {% include "partials/_card.animal.html.twig" %}
         {% endfor %}
+        
     </div>
+    
 
     {% endif %}
 

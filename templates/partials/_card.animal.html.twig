@@ -11,7 +11,7 @@
     {% endif %}
     <div class="card-body">
         <h5 class="card-title">{{ animal.name }}</h5>
-        <button class="btn btn-primary stats" id="{{ animal.id }}"><a href="{{ path('app_animals_show', {'id': animal.id}) }}" >Découvrir</a></button>
+        <button class="btn btn-primary stats" id="{{ animal.id }}"><a href="{{ path('app_animals_show', {'id': animal.id}) }}" class="text-dark link-underline link-underline-opacity-0" >Découvrir</a></button>
     </div>
     </div>
 </div>

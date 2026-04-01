@@ -4,14 +4,17 @@
 
 {% block body %}
 
-
-<div class="container">
+<div class="container" style="height:700px;">
+<div>
     <h1 class="display-4 fw-bold text-center my-5 py-5">Contact</h1>
-    <p class="fs-4 text-center mb-5 pb-5"> Une question, un besoin, un problème?<br>N'hésitez pas à nous contacter pour nous faire part de toutes vos remarques.<br>Nos équipes vous répondrons dans les meilleurs délais.</p>
+    <p class="fs-4 text-center mb-5 pb-5"> Une question, un besoin, un problème?<br>N'hésitez pas à nous contacter pour nous faire part de toutes vos remarques.<br>Nous nous ferons un plaisir de vous répondre.</p>
 </div>
 
-<div class="text-center">
+<div class="text-center d-flex flex-column">
 Votre message a bien été envoyé. Nos équipes vous répondront dans les meilleurs délais.
+<a href="{{ path('app_home') }}" class="btn btn-primary m-auto my-5">Retour à l'accueil</a>
+</div>
 </div>
 {% endblock %}
+
 

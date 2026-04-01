@@ -11,7 +11,7 @@
                 <h2 class="display-6 fw-bold text-light">Les animaux du zoo se répartissent sur trois habitats
                 qui reproduisent chacun les conditions de vie de leur milieu naturel.</h2>
                     <div class="">
-                        <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Découvrir</button>
+                        <a href="{{ path('app_habitats') }}#decouvrir" class="btn btn-primary">Découvrir</a>
                         
                     </div>
             </div>
@@ -22,11 +22,12 @@
   </div>
 
 <div class="container">
-    <div class="row text-center">
+    <div class="row text-center" id="decouvrir">
         <h2 class="display-4 fw-bold my-5 py-5">Habitats</h2>
         {% for habitat in habitats %}
         {% include "partials/_section.habitats.html.twig" %}
         {% endfor %}
+        <div id="decouvrir"></div>
     </div>
 </div>
 
