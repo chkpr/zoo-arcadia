@@ -1,8 +1,8 @@
 # Zoo Arcadia
 
-Web appliccation for the management of Zoo Arcadia, buit with Symfony 7.1 and a dual database architecture (MySQL + MongoDB).
+Web application for the management of Zoo Arcadia, built with Symfony 7.1 and a dual database architecture (MySQL + MongoDB).
 
-This project was developed as part of Studi's Graduate Web Developper program.
+This project was developed as part of Studi's Graduate Web Developer program.
 
 ## Features
 
