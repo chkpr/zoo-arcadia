@@ -2,7 +2,7 @@
 
 Web appliccation for the management of Zoo Arcadia, buit with Symfony 7.1 and a dual database architecture (MySQL + MongoDB).
 
-This project was developped as part of Studi's Graduate Web Developper program.
+This project was developed as part of Studi's Graduate Web Developper program.
 
 ## Features
 
@@ -26,9 +26,9 @@ This project was developped as part of Studi's Graduate Web Developper program.
 - Webpack Encore / SCSS
 - Bootstrap
 
-##Local setup
+## Local setup
 
-Clone repositories and install debendencies:
+Clone repositories and install dependencies:
 ```bash
 composer install
 npm install
@@ -44,6 +44,6 @@ npm run dev
 symfony serve
 ```
 
-#Notes
-This project was developed as a trainign exercise and is not intended for production use.
+## Notes
+This project was developed as a training exercise and is not intended for production use.
 
