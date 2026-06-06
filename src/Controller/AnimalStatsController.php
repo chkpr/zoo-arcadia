@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Document\AnimalStats;
-use App\Document\Restaurant;
 use Doctrine\ODM\MongoDB\DocumentManager;
 use MongoDB\BSON\Regex;
 use Psr\Log\LoggerInterface;
@@ -44,6 +43,4 @@ class AnimalStatsController extends AbstractController
 
         return $this->render('animalstats/show.html.twig', ['animalstats' => $animalstats]);
     }
-
-
 }

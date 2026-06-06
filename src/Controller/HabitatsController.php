@@ -7,7 +7,6 @@ use App\Repository\AnimalsRepository;
 use App\Repository\HabitatsRepository;
 use App\Repository\ServicesRepository;
 use App\Document\AnimalStats;
-use ContainerBtSLouf\getVetVisitCrudControllerconfigureResponseParametersService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -20,9 +19,6 @@ class HabitatsController extends AbstractController
     public function index(HabitatsRepository $habitatsRepository): Response
     {
         $habitats = $habitatsRepository->findBy([], ['id' => 'ASC']);
-
-        dump($habitats);
-
         return $this->render('habitats/index.html.twig', [
             'habitats' => $habitats,
         ]);
@@ -34,9 +30,7 @@ class HabitatsController extends AbstractController
     #[Route('/habitats/{id}', name: 'app_habitats_show')]
     public function show(Habitats $habitat, AnimalsRepository $animalsRepository): Response
     {
-
             $animals = $animalsRepository->findBy(['habitat' => $habitat]);
-            dump($animals);
 
             return $this->render('habitats/show.html.twig', [
             'habitat' => $habitat,

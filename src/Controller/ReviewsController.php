@@ -22,23 +22,15 @@ class ReviewsController extends AbstractController
         $form = $this->createForm(ReviewType::class, $review);
         $form->handleRequest($request);
 
-        
-
-            if ($form->isSubmitted()) {
+            if ($form->isSubmitted() && $form->isValid()) {
             $entityManagerInterface->persist($review);
             $entityManagerInterface->flush();
             return $this->redirectToRoute('app_reviews_sent', [
-                
             ]);
-        } else {
-
-        return $this->render('reviews/index.html.twig', [
+        } else { return $this->render('reviews/index.html.twig', [
             'form' => $form,
         ]);
         }
-
-
-        
     }
 
     #[Route('/avis/sent', name: 'app_reviews_sent')]
@@ -51,9 +43,5 @@ class ReviewsController extends AbstractController
             return $this->render('reviews/sent.html.twig', [
                 'form' =>$form,
             ]);
-
-           
-
         }
-
 }

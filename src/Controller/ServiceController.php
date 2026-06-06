@@ -23,9 +23,6 @@ class ServiceController extends AbstractController
     #[Route('/services/{id}', name: 'app_services_show')]
     public function show(Services $service): Response
     {
-
-        dump($service);
-
         return $this->render('service/show.html.twig', [
             'service' => $service,
         ]);

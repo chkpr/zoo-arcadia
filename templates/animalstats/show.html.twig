@@ -1,6 +1,4 @@
-{# templates/restaurant/browse.html.twig #}
-   
-{% extends 'base.html.twig' %}
+ {% extends 'base.html.twig' %}
 
 {% block title %}
     Statistiques Animaux vues
@@ -13,8 +11,7 @@
                 <span style="color:deeppink;"><b>Name: </b>{{ animalstat.name }}</span><br>
                 <b>Espèce:</b> {{ animalstat.animal }}<br>
                 <b>Id:</b> {{ animalstat.animal_id }}<br>
-                <b>Views:</b> {{ animalstat.views }}<br>
-             
+                <b>Views:</b> {{ animalstat.views }}<br>  
             </p>
         {% endfor %}
 {% endblock %}

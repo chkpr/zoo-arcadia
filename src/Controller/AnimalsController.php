@@ -30,9 +30,6 @@ class AnimalsController extends AbstractController
     public function index(AnimalsRepository $animalsRepository): Response
     {
         $animals = $animalsRepository->findBy([], ['id' => 'ASC']);
-
-        dump($animals);
-
         return $this->render('animals/index.html.twig', [
             'animals' => $animals,
         ]);
@@ -43,31 +40,20 @@ class AnimalsController extends AbstractController
    
     public function show(#[MapEntity(id: 'id')] Animals $animal, int $id): Response
     {
-
-      $animalId =(dump($id));
+        $animalId = $id;
 
         $updateViews = $this->dm->createQueryBuilder(AnimalStats::class)
            ->findAndUpdate()
+           -> upsert(true)
            ->field('animal_id')->equals($animalId)
            ->field('views')->inc(1)        
             ->getQuery()
           ->execute();
 
-
-
-
-                dump($animal);
-
         return $this->render('./partials/_page.animal.html.twig', [
             'animal' => $animal,
-            
-            
         ]);
     }
-
-    
-
-
     }
 
 
