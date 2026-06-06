@@ -44,6 +44,11 @@ npm run dev
 symfony serve
 ```
 
+## Work in progress
+
+- Upgrade to Symfony 7.2+ (blocked by MongoDB driver compatibility)
+- Animal statistics page with Mysql/MongoDB cross-database join (branch: feat/animal-stats)
+
 ## Notes
 This project was developed as a training exercise and is not intended for production use.
 
