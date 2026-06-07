@@ -47,8 +47,8 @@ class AnimalsController extends AbstractController
            -> upsert(true)
            ->field('animal_id')->equals($animalId)
            ->field('views')->inc(1)        
-            ->getQuery()
-          ->execute();
+           ->getQuery()
+           ->execute();
 
         return $this->render('./partials/_page.animal.html.twig', [
             'animal' => $animal,

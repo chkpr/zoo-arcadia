@@ -14,4 +14,13 @@
                 <b>Views:</b> {{ animalstat.views }}<br>  
             </p>
         {% endfor %}
+
+        <div class="container">
+    <div class="row text-center">
+        <h2 class="display-4 fw-bold my-5 py-5">Découvrir les animaux de cet habitat</h2>
+        {% for animals in animals %}
+        {% include "partials/_test.card.animals.html.twig" %}
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

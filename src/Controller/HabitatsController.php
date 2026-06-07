@@ -21,11 +21,8 @@ class HabitatsController extends AbstractController
         $habitats = $habitatsRepository->findBy([], ['id' => 'ASC']);
         return $this->render('habitats/index.html.twig', [
             'habitats' => $habitats,
-        ]);
-        
+        ]);   
     }
-
-
 
     #[Route('/habitats/{id}', name: 'app_habitats_show')]
     public function show(Habitats $habitat, AnimalsRepository $animalsRepository): Response

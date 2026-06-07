@@ -37,7 +37,6 @@ class AnimalStatsController extends AbstractController
         $queryBuilder = $animalstatsRepository->createQueryBuilder();
 
         $animalstats = $queryBuilder
-                ->field('animal_id')->equals('1')
                 ->getQuery()
                 ->execute();
 
