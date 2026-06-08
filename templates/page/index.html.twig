@@ -1,50 +1,43 @@
 
 {% extends 'base.html.twig' %}
 
-
-
 {% block body %}
-<div class="d-flex align-items-end">
-    <div class="position-absolute d-flex flex-column align-items-start pb-5 mb-3 ps-5 ms-5">
-        <h1 class="display-3 fw-bold text-light">Zoo Arcadia</h1>
-            <div class="">
-                <h2 class="display-6 fw-bold text-light">Un écoparc animalier aux portes de Brocéliande.</h2>
-                    <div class="">
-                        <a href="{{ path('app_home') }}#decouvrir" class="btn btn-primary">Découvrir</a>
-                        
-                    </div>
-            </div>
+<div class="d-flex align-items-end ">
+  <div class="position-absolute d-flex flex-column align-items-start pb-5 mb-3 ps-5 ms-5">
+    <div style="z-index: 2;">
+    <h1 class="display-3 fw-bold text-light ">Zoo Arcadia</h1>
+      <div class="mb-xxl-3 pb-xxl-3">
+        <h2 class="display-6 fw-bold text-light">Un écoparc animalier aux portes de Brocéliande.</h2>
+          <div class="">
+            <a href="{{ path('app_home') }}#decouvrir" class="btn btn-primary">Découvrir</a>
+          </div>
+      </div>
     </div>
-
-    <img src="{{ asset ('build/images/cover_index.jpg')}}" class="w-100 h-100 img-fluid" alt="Un tigre allongé sur une large souche d'abre coupé">
-
   </div>
+  <div class="position-relative">
+    <img src="{{ asset ('build/images/cover_index2.jpg')}}" class="w-100 h-100 img-fluid d-block" alt="Un tigre allongé sur une large souche d'abre coupé">
+      <div class="position-absolute bottom-0 start-0 end-0"
+          style="height: 60%; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
+      </div>
+  </div>
+</div>
 
-
-
-
-  <section class="container">
+<section class="container">
   <h2 class="display-4 fw-bold text-center my-5 py-5">Habitats</h2>
-
   <div class="container" id="decouvrir">
     <div class="row text-center">
         {% for habitat in habitats %}
         {% include "partials/_section.habitats.html.twig" %}
         {% endfor %}
     </div>
-</div>
-
-
+  </div>
   <div class="d-flex justify-content-center">
     <a href="{{ path('app_habitats') }}" class="btn btn-primary my-5">Voir tous les habitats</a>
   </div>
+</section>
 
-  </section>
-
-  <section class="container">
-  
+<section class="container">
   <h2 class="display-4 fw-bold text-center my-5 py-5">Services</h2>
-
   <div class="container">
     <div class="row text-center">
         {% for service in services %}
@@ -52,56 +45,44 @@
         {% endfor %}
     </div>
   </div>
-  
   <div class="d-flex justify-content-center">
     <a href="{{ path('app_services') }}" class="btn btn-primary my-5">Voir tous les Services</a>
   </div>
-  
-  </section>
+</section>
 
-    <section>
+<section>
   <h2 class="display-4 fw-bold text-center my-5 py-5">Avis</h2>
-
-
   <div class="mt-5 pt-5 d-flex align-items-center justify-content-center md-4 w-auto">
-  <div class="position-absolute d-flex flex-column pb-5 mb-5 px-5 mx-5 bg-dark bg-opacity-75 rounded-4 w-50 h-50">
-    <div id="carouselExampleAutoplaying" class="carousel slide m-auto" data-bs-ride="carousel">
-    <div class="carousel-inner style="height:100px;">
-      
-        {% for review in reviews %}
-        <div class="carousel-item active">
-        <div class="d-flex flex-column justify-content-start">
-            <div>
-            <p class="fs-4 fw-italic text-light text-center my-5 text-nowrap text-break"> {{ review.content }}</p>
-            </div>
-            <div class="">
+    <div class="position-absolute d-flex flex-column pb-5 mb-5 px-5 mx-5 bg-dark bg-opacity-75 rounded-4 w-50 h-50">
+      <div id="carouselExampleAutoplaying" class="carousel slide m-auto" data-bs-ride="carousel">
+        <div class="carousel-inner style="height:100px;"> 
+          {% for review in reviews %}
+            <div class="carousel-item active">
+              <div class="d-flex flex-column justify-content-start">
+                <div>
+                  <p class="fs-4 fw-italic text-light text-center my-5 text-nowrap text-break"> {{ review.content }}</p>
+                </div>
+                <div class>
                 <p class="fs-6 fw-bold text-light text-center">{{ review.author }}</p>
+                </div>
+              </div>
             </div>
-            </div>
+          {% endfor %}
         </div>
-        {% endfor %}
       </div>
-      
+      <button class="carousel-control-prev mt-5" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next mt-5" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+      <div class="d-flex justify-content-center">
+        <a href="{{ path('app_reviews') }}" class="btn btn-primary">Ajouter un avis</a>
       </div>
-  
-  <button class="carousel-control-prev mt-5" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next mt-5" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
- <div class="d-flex justify-content-center">
-                        
-                        <a href="{{ path('app_reviews') }}" class="btn btn-primary">Ajouter un avis</a>
-                    </div>
+    </div>  
+    <img src="{{ asset ('build/images/lionne.png')}}" class="w-100 h-100 img-fluid" alt="Deux lionnes allongées sur un rocher, l'une de face et l'autre de dos">
   </div>
-
-
-<img src="{{ asset ('build/images/lionne.png')}}" class="w-100 h-100 img-fluid" alt="Deux lionnes allongées sur un rocher, l'une de face et l'autre de dos">
-
-  </div>
-
-  </section>
+</section>
 {% endblock %}
