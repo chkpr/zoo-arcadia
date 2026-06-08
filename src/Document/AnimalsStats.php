@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace App\Document;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
 
 #[ODM\Document(collection: 'animals')]
@@ -15,16 +13,16 @@ class AnimalStats
     public ?string $id = null;
 
     #[ODM\Field]
-    public string $animal_id;
+    public string $animal_id = '';
 
     #[ODM\Field]
-    public string $animal;
+    public string $animal = '';
 
     #[ODM\Field]
-    public string $name;
+    public string $name = '';
 
      #[ODM\Field]
-    public int $views;
+    public int $views = 0;
 
 
   
