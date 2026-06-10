@@ -5,8 +5,7 @@ $secondary: #ffffff;
 
 .nav-background {
     background: linear-gradient(#0c0c0c, rgba(250, 250, 251, 0));
-    background-color: #052219;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    padding: 20rem;
 }
 
 .footer-background {
@@ -15,7 +14,24 @@ $secondary: #ffffff;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
 }
 
+.nav-links .nav-link {
+    color:#ffd900;
+}
 
+.cta-button {
+    padding: 10px 40px;
+    text-transform:uppercase;
+    text-decoration: none;
+    border: 1px solid #121212;
+    color:#000000;
+    background-color:#ffd900;
+    font-size: 14px;
+}
+
+.headline {
+    margin-bottom: 20%;
+
+}
 
 .rate {
     display:flex;

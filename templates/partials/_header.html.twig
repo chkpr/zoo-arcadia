@@ -1,14 +1,14 @@
-<div class="nav-background">
-    <header class="container d-flex flex-wrap align-items-center justify-content-center justify-content-md-between pt-3 nav-background sticky-top">
+
+    <header class="container-fluid d-flex align-items-center justify-content-center justify-content-around py-4 position-absolute end-0" style="z-index:10;">
     
-      <div class="col-md-3 mb-2 mb-md-0">
+      <div class="mb-2 mb-md-0">
         <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
-          <img src="{{ asset('build/images/logo.png') }}" alt="Logo du Zoo Arcadia" height="60"/>
+          <img src="{{ asset('build/images/logo.png') }}" alt="Logo du Zoo Arcadia" height="40"/>
         </a>
       </div>
 
-      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="{{ path('app_home') }}" class="nav-link px-2 link-secondary">Accueil</a></li>
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 text-uppercase font-weight-bold nav-links">
+        <li><a href="{{ path('app_home') }}" class="px-4 nav-link link-secondary">Accueil</a></li>
         <li><a href="{{ path('app_habitats') }}" class="nav-link px-2">Habitats</a></li>
         <li><a href="{{ path('app_services') }}" class="nav-link px-2">Services</a></li>
         <li><a href="{{ path('app_reviews') }}" class="nav-link px-2">Avis</a></li>
@@ -16,8 +16,9 @@
       </ul>
 
       <div class="col-md-3 text-end">
-        <a href="{{ path('app_login') }}" class="btn btn-primary">Connexion</a>
+        <a href="{{ path('app_login') }}" class="cta-button">Connexion</a>
       </div>
-      
+    
     </header>
-  </div>
+
+
