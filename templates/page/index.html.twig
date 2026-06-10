@@ -14,7 +14,7 @@
     </div>
   </div>
   <div class="position-relative">
-    <img src="{{ asset ('build/images/cover_index1.jpg')}}" class="w-100 h-100 img-fluid d-block" alt="Un tigre allongé sur une large souche d'abre coupé">
+    <img src="{{ asset ('build/images/cover_habitats.png')}}" class="w-100 h-100 img-fluid d-block" alt="Un tigre allongé sur une large souche d'abre coupé">
       <div class="position-absolute bottom-0 start-0 end-0"
           style="height: 60%; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
       </div>
@@ -22,9 +22,18 @@
 </div>
 
 <div class="bg-arcadia-dark position-relative shadow-arcadia-dark">
-<section class="container-fluid ">
-  <h2 class="fs-1 fw-bold text-center py-5 text-light">18 espèces animales réparties sur 3 habitats</h2>
+<section class="container-fluid">
+  <div class="d-flex flex-row mx-5 pb-5 mb-5 align-items-start">
+    <img src="{{ asset ('build/images/zoo_map.png')}}" alt="Carte du zoo Arcadia indiquant la localisation des 3 habitats">
+    <div class="px-5 mx-5 d-flex flex-column justify-content-end">
+    <h2 class="fs-2 fw-bold pt-5 my-5 text-light">18 espèces animales réparties sur 3 habitats</h2>
+    <p class="text-light">Le Zoo Arcadia abrite 18 espèces animales réparties sur trois habitats naturellement reconstitués : la jungle, la savane et le marais. Chaque espace a été pensé pour offrir aux animaux un environnement proche de leur milieu d'origine, tout en permettant aux visiteurs une immersion totale.
+La savane accueille les emblématiques big five africains — lion, léopard, éléphant, rhinocéros et buffle — dans un vaste espace ouvert qui rappelle les grandes plaines du continent. La jungle dévoile une faune luxuriante dans un écrin de végétation dense, tandis que le marais abrite des espèces plus discrètes, maîtresses des milieux humides.
+Aux portes de la forêt de Brocéliande, Zoo Arcadia vous invite à un voyage animalier unique, entre découverte et émerveillement.</p>
+  </div>
+  </div>
   <div class="container" id="decouvrir">
+  <h3 class="text-light text-center py-5 my-5">Découvrez les habitats du zoo</h3>
     <div class="row text-center">
         {% for habitat in habitats %}
         {% include "partials/_section.habitats.html.twig" %}
