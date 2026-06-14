@@ -1,0 +1,24 @@
+{% extends 'bootstrap_5_layout.html.twig' %}
+
+{% block form_row %}
+    <div class="mb-4 {{ row_attr.class|default('') }}">
+        {{ form_label(form, null, {'label_attr': {'class': 'form-label text-white mb-2'}}) }}
+        {{ form_widget(form) }}
+        {{ form_errors(form) }}
+    </div>
+{% endblock %}
+
+{% block form_widget_simple %}
+    {% set attr = attr|merge({'class': (attr.class|default('') ~ ' form-control-glass')|trim}) %}
+    {{ parent() }}
+{% endblock %}
+
+{% block textarea_widget %}
+    {% set attr = attr|merge({'class': (attr.class|default('') ~ ' form-control-glass')|trim}) %}
+    {{ parent() }}
+{% endblock %}
+
+{% block submit_widget %}
+    {% set attr = attr|merge({'class': ' cta-button'}) %}
+    {{ parent() }}
+{% endblock %}

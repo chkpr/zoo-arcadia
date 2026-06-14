@@ -75,17 +75,23 @@
   </div>
 </section>
 
-<section class="container mt-5 pt-5">
+<section class="container-fluid mt-5 pt-5">
   <h3 class="mb-5 text-light text-center section-title-center">Contact</h3>
   <p class="text-white text-center fs-5">Une question, un besoin, un problème?<br>N'hésitez pas à nous contacter pour nous faire part de toutes vos remarques.<br>Nos équipes vous répondrons dans les meilleurs délais.</p>
-  <div class="container">
-    <div class="d-flex flex-column">
-
+   <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-7 col-xl-6 mb-5 pb-5">
+    {% form_theme contactForm 'form/custom_form.html.twig' %}
+{{ form_start(contactForm, {'action': path('app_contact')}) }}
+  <div class="d-flex gap-3 mb-2">
+    {{ form_row(contactForm.name) }}
+    {{ form_row(contactForm.firstname) }}
+  </div>
+  {{ form_row(contactForm.email) }}
+  {{ form_row(contactForm.message) }}
+  {{ form_row(contactForm.save) }}
+{{ form_end(contactForm, {'render_rest': false}) }}
     </div>
-  </div>
-  <div class="d-flex justify-content-center mt-3 pt-3">
-    <a href="{{ path('app_reviews') }}" class="cta-button-card my-5">Envoyer</a>
-  </div>
+    <img src="{{ asset ('build/images/lionne.png')}}" class="w-100 h-100 img-fluid mt-5 pt-5" alt="Deux lionnes allongées sur un rocher, l'une de face et l'autre de dos">
 </section>
 </div>
 </div>

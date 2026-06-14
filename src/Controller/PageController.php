@@ -9,6 +9,7 @@ use App\Repository\ServicesRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use App\Form\ContactType;
 
 class PageController extends AbstractController
 {
@@ -22,11 +23,15 @@ class PageController extends AbstractController
         $reviews = $reviewsRepository->findBy(['status' => 'true'], ['id' => 'DESC'],3);
 
         $websiteName = 'Zoo Arcadia';
+
+        $contactForm = $this->createForm(ContactType::class);
+
         return $this->render('page/index.html.twig', [
             'websiteName' => $websiteName,
             'habitats' => $habitats,
             'services' => $services,
             'reviews' => $reviews,
+            'contactForm' => $contactForm,
 
         ]);
     }
