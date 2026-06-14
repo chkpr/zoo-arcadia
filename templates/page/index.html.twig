@@ -22,10 +22,10 @@
 </div>
 
 <div class="bg-arcadia-dark position-relative shadow-arcadia-dark">
-<section class="container-fluid">
+<section class="container-fluid mb-5 pb-5">
   <div class="d-flex flex-row mx-5 meb-5">
     <div class="px-5 mx-5 d-flex flex-column w-50">
-      <h3 class="fs-2 fw-bold pt-5 my-5 text-light section-title">18 espèces animales réparties sur 3 habitats</h3>
+      <h3 class="pt-5 my-5 text-light section-title">18 espèces animales<br>réparties sur 3 habitats</h3>
       <p class="text-light">Le Zoo Arcadia abrite 18 espèces animales réparties sur trois habitats naturellement reconstitués : la jungle, la savane et le marais. Chaque espace a été pensé pour offrir aux animaux un environnement proche de leur milieu d'origine, tout en permettant aux visiteurs une immersion totale.</p>
       <p class="text-light">La savane accueille les emblématiques big five africains — lion, léopard, éléphant, rhinocéros et buffle — dans un vaste espace ouvert qui rappelle les grandes plaines du continent. La jungle dévoile une faune luxuriante dans un écrin de végétation dense, 
       tandis que le marais abrite des espèces plus discrètes, maîtresses des milieux humides.</2>
@@ -34,29 +34,57 @@
     <img src="{{ asset ('build/images/zoo_map.png')}}" class="mb-5 pb-5 zoo-map-overlap" alt="Carte du zoo Arcadia indiquant la localisation des 3 habitats">
   </div>
   <div class="container" id="decouvrir">
-  <h3 class="fs-2 fw-bold mb-5 text-light text-center section-title-center">Découvrez les habitats du zoo</h3>
-    <div class="row text-center">
+  <h3 class="mb-5 text-light text-center section-title-center">Découvrez les habitats du zoo</h3>
+    <div class="row">
         {% for habitat in habitats %}
         {% include "partials/_section.habitats.html.twig" %}
         {% endfor %}
     </div>
   </div>
-  <div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-center mt-3 pt-3">
     <a href="{{ path('app_habitats') }}" class="cta-button my-5">Voir tous les habitats</a>
   </div>
 </section>
 
-<section class="container">
-  <h2 class="display-4 fw-bold text-center my-5 py-5 text-light">Services</h2>
+<section class="container mt-5 pt-5">
+  <h3 class="mb-5 text-light text-center section-title-center">Organisez votre visite</h3>
   <div class="container">
-    <div class="row text-center">
+    <div class="row">
         {% for service in services %}
         {% include "partials/_section.services.html.twig" %}
         {% endfor %}
     </div>
   </div>
-  <div class="d-flex justify-content-center">
-    <a href="{{ path('app_services') }}" class="btn btn-primary my-5">Voir tous les Services</a>
+  <div class="d-flex justify-content-center mt-3 pt-3">
+    <a href="{{ path('app_services') }}" class="cta-button-card my-5">Voir tous les Services</a>
+  </div>
+</section>
+
+<section class="container mt-5 pt-5">
+  <h4 class="reviews-title text-center">Témoignages</4>
+  <h3 class="mb-5 text-light text-center section-title-center">Ce que disent nos visiteurs</h3>
+  <div class="container">
+    <div class="row">
+        {% for review in reviews %}
+        {% include "partials/_section.reviews.html.twig" %}
+        {% endfor %}
+    </div>
+  </div>
+  <div class="d-flex justify-content-center mt-3 pt-3">
+    <a href="{{ path('app_reviews') }}" class="cta-button-card my-5">Ajouter un avis</a>
+  </div>
+</section>
+
+<section class="container mt-5 pt-5">
+  <h3 class="mb-5 text-light text-center section-title-center">Contact</h3>
+  <p class="text-white text-center fs-5">Une question, un besoin, un problème?<br>N'hésitez pas à nous contacter pour nous faire part de toutes vos remarques.<br>Nos équipes vous répondrons dans les meilleurs délais.</p>
+  <div class="container">
+    <div class="d-flex flex-column">
+
+    </div>
+  </div>
+  <div class="d-flex justify-content-center mt-3 pt-3">
+    <a href="{{ path('app_reviews') }}" class="cta-button-card my-5">Envoyer</a>
   </div>
 </section>
 </div>

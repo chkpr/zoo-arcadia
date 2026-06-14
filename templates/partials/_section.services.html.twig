@@ -1,13 +1,14 @@
 <div class="col-md-4 my-2 d-flex">
-    <div class="card w-100">
+    <div class="card card-glass w-100 h-100">
     {% if service.imageName %}
         <img src="{{ vich_uploader_asset(service, 'imageFile') }}" class="card-img-top" alt="photo de {{ service.name }}">
     {% else %}
         <img src="{{ asset('build/images/default-service.png') }}" class="card-img-top" alt="photo de {{ service.name }}">
     {% endif %}
-    <div class="card-body">
-        <h5 class="card-title">{{ service.name }}</h5>
-        <a href="{{ path('app_services_show', {'id': service.id}) }}" class="btn btn-primary">Découvrir</a>
+    <div class="d-flex flex-column align-items-start text-start flex-grow-1">
+        <h5 class="card-content-title text-white my-3">{{ service.name }}</h5>
+         <p class="text-white mb-5">{{ service.description }}</p>
+        <a href="{{ path('app_services_show', {'id': service.id}) }}" class="cta-button-card">Découvrir</a>
     </div>
     </div>
 </div>

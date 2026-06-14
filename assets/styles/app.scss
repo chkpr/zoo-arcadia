@@ -33,8 +33,9 @@ $secondary: #ffffff;
 }
 
 h3 {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 800;
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 48px;
 }
 
 .rate {
@@ -135,7 +136,7 @@ h3 {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 60px;
+  width: 120px;
   height: 3px;
   background-color: #ffd900;
 }
@@ -176,4 +177,25 @@ h3 {
     align-self: flex-start;
     margin-top: auto;
     margin-bottom: 10px;
+}
+
+.card-content-title {
+    font-size: 30px;
+    font-family: Plus Jakarta Sans;
+    text-transform:uppercase;
+    font-weight: 900;
+}
+
+.reviews-title {
+    color:#ffc900;
+    text-transform: uppercase;
+    font-family: Plus Jakarta Sans;
+    font-size:18px;
+
+}
+
+.stars {
+    color: #ffd900;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
 }
