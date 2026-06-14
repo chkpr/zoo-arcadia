@@ -30,12 +30,12 @@ $secondary: #ffffff;
 
 .headline {
     margin-bottom: 10%;
-
 }
 
-.zoo_map {
-    padding-bottom : 400px;
-} 
+h3 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+}
 
 .rate {
     display:flex;
@@ -117,5 +117,63 @@ $secondary: #ffffff;
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-        
+}
+
+.zoo-map-overlap {
+  transform: translateY(-100px);
+  position: relative;
+  z-index: 3;
+}
+
+.section-title, .section-title-center {
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: #ffd900;
+}
+
+.section-title-center::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #ffd900;
+}
+
+.card-glass {
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+
+.card-glass .card-body {
+  padding: 4rem 4rem;
+}
+
+.cta-button-card {
+    padding: 10px 40px;
+    text-transform:uppercase;
+    text-decoration: none;
+    border: 1px solid #121212;
+    color:#000000;
+    background-color:#ffd900;
+    font-size: 14px;
+    align-self: flex-start;
+    margin-top: auto;
+    margin-bottom: 10px;
 }
