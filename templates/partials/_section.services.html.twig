@@ -5,10 +5,11 @@
     {% else %}
         <img src="{{ asset('build/images/default-service.png') }}" class="card-img-top" alt="photo de {{ service.name }}">
     {% endif %}
-    <div class="d-flex flex-column align-items-start text-start flex-grow-1">
-        <h5 class="card-content-title text-white my-3">{{ service.name }}</h5>
+    <div class="d-flex flex-column align-items-start text-start flex-grow-1 card-text">
+        <p class="eyebrow-text mt-4">{{ service.shortDesc }}</p>
+        <h5 class="card-content-title text-white mb-3">{{ service.name }}</h5>
          <p class="text-white mb-5">{{ service.description }}</p>
-        <a href="{{ path('app_services_show', {'id': service.id}) }}" class="cta-button-card">Découvrir</a>
+        <a href="{{ path('app_services_show', {'id': service.id}) }}" class="text-light more-info">En savoir plus &rarr;</a>
     </div>
     </div>
 </div>

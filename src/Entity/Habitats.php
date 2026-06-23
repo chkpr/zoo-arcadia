@@ -42,6 +42,9 @@ class Habitats
 
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
+    
+    #[ORM\Column(length: 255)]
+    private ?string $shortDesc = null;
 
     public function __construct()
     {
@@ -155,5 +158,29 @@ class Habitats
     public function getImageSize(): ?int
     {
         return $this->imageSize;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeImmutable
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(?\DateTimeImmutable $updatedAt): static
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getShortDesc(): ?string
+    {
+        return $this->shortDesc;
+    }
+
+    public function setShortDesc(string $shortDesc): static
+    {
+        $this->name = $shortDesc;
+
+        return $this;
     }
 }

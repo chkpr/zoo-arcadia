@@ -3,10 +3,10 @@
 
 {% block body %}
 <div class="position-relative">
-<div class="d-flex align-items-end">
-  <div class="position-absolute d-flex flex-column align-items-start headline ms-5 ps-5">
+<div class="d-flex align-items-end ">
+  <div class="position-absolute d-flex flex-column align-items-start cover-text ms-5 ps-5">
     <div style="z-index: 2;">
-    <h1 class="display-3 fw-bold text-light ">Zoo Arcadia</h1>
+    <h1 class="fw-bold text-light">Zoo Arcadia</h1>
         <h2 class="display-6 fw-bold text-light">Un écoparc animalier aux portes de Brocéliande.</h2>
           <div class="mt-5">
             <a href="{{ path('app_home') }}#decouvrir" class="cta-button mt-3">Découvrir</a>
@@ -14,7 +14,7 @@
     </div>
   </div>
   <div class="position-relative">
-    <img src="{{ asset ('build/images/cover_habitats.png')}}" class="w-100 h-100 img-fluid d-block" alt="Un tigre allongé sur une large souche d'abre coupé">
+    <img src="{{ asset ('build/images/cover_index_cropped.jpg')}}" class="w-100 h-100 img-fluid d-block" alt="Un tigre allongé sur une large souche d'abre coupé">
       <div class="position-absolute bottom-0 start-0 end-0"
           style="height: 60%; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
       </div>
@@ -25,7 +25,8 @@
 <section class="container-fluid mb-5 pb-5">
   <div class="d-flex flex-row mx-5 meb-5">
     <div class="px-5 mx-5 d-flex flex-column w-50">
-      <h3 class="pt-5 my-5 text-light section-title">18 espèces animales<br>réparties sur 3 habitats</h3>
+      <p class="pt-5 eyebrow-text">écosystèmes</p>
+      <h3 class="mb-5 text-light section-title">18 espèces animales<br>réparties sur 3 habitats</h3>
       <p class="text-light">Le Zoo Arcadia abrite 18 espèces animales réparties sur trois habitats naturellement reconstitués : la jungle, la savane et le marais. Chaque espace a été pensé pour offrir aux animaux un environnement proche de leur milieu d'origine, tout en permettant aux visiteurs une immersion totale.</p>
       <p class="text-light">La savane accueille les emblématiques big five africains — lion, léopard, éléphant, rhinocéros et buffle — dans un vaste espace ouvert qui rappelle les grandes plaines du continent. La jungle dévoile une faune luxuriante dans un écrin de végétation dense, 
       tandis que le marais abrite des espèces plus discrètes, maîtresses des milieux humides.</2>
@@ -34,8 +35,9 @@
     <img src="{{ asset ('build/images/zoo_map.png')}}" class="mb-5 pb-5 zoo-map-overlap" alt="Carte du zoo Arcadia indiquant la localisation des 3 habitats">
   </div>
   <div class="container" id="decouvrir">
+  <p class="eyebrow-text text-center">Habitats</p>
   <h3 class="mb-5 text-light text-center section-title-center">Découvrez les habitats du zoo</h3>
-    <div class="row">
+    <div class="row g-4">
         {% for habitat in habitats %}
         {% include "partials/_section.habitats.html.twig" %}
         {% endfor %}
@@ -47,6 +49,7 @@
 </section>
 
 <section class="container mt-5 pt-5">
+<p class="eyebrow-text text-center">Services</p>
   <h3 class="mb-5 text-light text-center section-title-center">Organisez votre visite</h3>
   <div class="container">
     <div class="row">
@@ -61,7 +64,7 @@
 </section>
 
 <section class="container mt-5 pt-5">
-  <h4 class="reviews-title text-center">Témoignages</4>
+  <p class="eyebrow-text text-center">Témoignages</p>
   <h3 class="mb-5 text-light text-center section-title-center">Ce que disent nos visiteurs</h3>
   <div class="container">
     <div class="row">

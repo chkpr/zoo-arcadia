@@ -1,24 +1,21 @@
+<header class="container-fluid d-flex align-items-center justify-content-between py-4 position-absolute start-0 end-0 px-4 px-md-5" style="z-index:10;">
 
-    <header class="container-fluid d-flex align-items-center justify-content-around py-4 position-absolute end-0" style="z-index:10;">
-    
-      <div class="mb-2 mb-md-0">
-        <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
-          <img src="{{ asset('build/images/logo.png') }}" alt="Logo du Zoo Arcadia" height="40"/>
-        </a>
-      </div>
+  <div class="mb-2 mb-md-0">
+    <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+      <img src="{{ asset('build/images/logo.png') }}" alt="Logo du Zoo Arcadia" height="40"/>
+    </a>
+  </div>
 
-      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 text-uppercase font-weight-bold nav-links">
-        <li><a href="{{ path('app_home') }}" class="px-2 nav-link link-secondary">Accueil</a></li>
-        <li><a href="{{ path('app_habitats') }}" class="nav-link px-2">Habitats</a></li>
-        <li><a href="{{ path('app_services') }}" class="nav-link px-2">Services</a></li>
-        <li><a href="{{ path('app_reviews') }}" class="nav-link px-2">Avis</a></li>
-        <li><a href="{{ path('app_contact') }}" class="nav-link px-2">Contact</a></li>
-      </ul>
+  <ul class="nav mb-2 justify-content-center mb-md-0 text-uppercase font-weight-bold nav-links">
+    <li><a href="{{ path('app_home') }}" class="px-2 nav-link link-secondary">Accueil</a></li>
+    <li><a href="{{ path('app_habitats') }}" class="nav-link px-2">Habitats</a></li>
+    <li><a href="{{ path('app_services') }}" class="nav-link px-2">Services</a></li>
+    <li><a href="{{ path('app_reviews') }}" class="nav-link px-2">Avis</a></li>
+    <li><a href="{{ path('app_contact') }}" class="nav-link px-2">Contact</a></li>
+  </ul>
 
-      <div class="col-md-3 text-end">
-        <a href="{{ path('app_login') }}" class="cta-button">Connexion</a>
-      </div>
-    
-    </header>
+  <div class="text-end">
+    <a href="{{ path('app_login') }}" class="cta-button">Connexion</a>
+  </div>
 
-
+</header>

@@ -46,6 +46,9 @@ class Services
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $shortDesc = null;
+
     public function __construct()
     {
         $this->user = new ArrayCollection();
@@ -150,6 +153,30 @@ class Services
     public function getImageSize(): ?int
     {
         return $this->imageSize;
+    }
+
+    public function getShortDesc(): ?string
+    {
+        return $this->shortDesc;
+    }
+
+    public function setShortDesc(string $shortDesc): static
+    {
+        $this->name = $shortDesc;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeImmutable
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(?\DateTimeImmutable $updatedAt): static
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
     }
 }
 

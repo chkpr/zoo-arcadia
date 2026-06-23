@@ -5,10 +5,11 @@
     {% else %}
         <img src="{{ asset('build/images/default-habitat.png') }}" class="card-img-top" alt="photo de {{ habitat.name }}">
     {% endif %}
-    <div class="d-flex flex-column align-items-start text-start flex-grow-1">
-        <h5 class="card-content-title text-white my-3">{{ habitat.name }}</h5>
+    <div class="d-flex flex-column align-items-start text-start flex-grow-1 card-text">
+        <p class="eyebrow-text mt-4">{{ habitat.shortDesc }}</p>
+        <h5 class="card-content-title text-white mb-3">{{ habitat.name }}</h5>
         <p class="text-white mb-5">{{ habitat.description }}</p>
-        <a href="{{ path('app_habitats_show', {'id': habitat.id}) }}" class="cta-button-card">Découvrir</a>
+        <a href="{{ path('app_habitats_show', {'id': habitat.id}) }}" class="text-light more-info">En savoir plus &rarr;</a>
     </div>
     </div>
 </div>
