@@ -9,6 +9,7 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ServicesRepository::class)]
 #[Vich\Uploadable]
@@ -35,6 +36,12 @@ class Services
     private Collection $user;
 
     #[Vich\UploadableField(mapping: 'service', fileNameProperty: 'imageName', size: 'imageSize')]
+    #[Assert\File(
+        maxSize: '2M',
+        maxSizeMessage: 'La taille de l\'image ne doit pas dépasser 2 Mo.',
+        mimeTypes: ['image/jpeg', 'image/png', 'image/webp'],
+        mimeTypesMessage: 'Veuillez utiliser un format d\'image valide (JPG, PNG ou WebP).'
+    )]
     private ?File $imageFile = null;
 
     #[ORM\Column(nullable: true)]
@@ -46,7 +53,7 @@ class Services
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(name: 'short_desc', length: 255, nullable:true)]
     private ?string $shortDesc = null;
 
     public function __construct()
@@ -156,13 +163,14 @@ class Services
     }
 
     public function getShortDesc(): ?string
-    {
-        return $this->shortDesc;
-    }
+{
+    
+    return $this->shortDesc;
+}
 
-    public function setShortDesc(string $shortDesc): static
+    public function setShortDesc(?string $shortDesc): static
     {
-        $this->name = $shortDesc;
+        $this->shortDesc = $shortDesc;
 
         return $this;
     }

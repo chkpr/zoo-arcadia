@@ -28,6 +28,7 @@ class ServicesCrudController extends AbstractCrudController
 
         yield TextField::new('name', 'Nom');
         yield TextareaField::new('description', 'Description');
+        yield TextField::new('shortDesc', 'Description abrégée');
         yield TextField::new('OpeningHours', 'Horaires');
         yield ImageField::new('imageName', 'Image')->setBasePath($serviceImagePath)->hideOnForm();
         yield TextareaField::new('imageFile')->setFormType(VichImageType::class)->hideOnIndex();
