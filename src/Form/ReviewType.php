@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 
 class ReviewType extends AbstractType
 {
@@ -17,7 +18,11 @@ class ReviewType extends AbstractType
         $builder
             ->add('author', TextType::class, ['label' => 'Votre prénom ou pseudo'])
             
-            
+            -> add('rate', HiddenType::class, [
+                'label' => false,
+                'attr' => ['id' => 'rate-value']
+            ])
+
             ->add('content',TextType::class, ['label' => 'Votre avis'])
             
            ->add('status', ChoiceType::class, [

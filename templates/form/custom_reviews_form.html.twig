@@ -1,0 +1,20 @@
+{% block _reviews_rate_widget %}
+
+<div>Votre note</div>
+
+<div class="rate enabled mb-3" id="star-rating">
+    <input type="radio" id="star5" name="rate-display" value="5"><label for="star5">5</label>
+    <input type="radio" id="star4" name="rate-display" value="4"><label for="star4">4</label>
+    <input type="radio" id="star3" name="rate-display" value="3"><label for="star3">3</label>
+    <input type="radio" id="star2" name="rate-display" value="2"><label for="star2">2</label>
+    <input type="radio" id="star1" name="rate-display" value="1"><label for="star1">1</label>
+</div>
+
+<script>
+document.querySelectorAll('#star-rating input[type="radio"]').forEach(input => {
+    input.addEventListener('change', function() {
+        document.getElementById('rate-value').value = this.value;
+    });
+});
+</script>
+{% endblock %}

@@ -1,7 +1,11 @@
 <div class="col-md-4 my-2 d-flex">
-    <div class="card card-glass w-100 h-100">
+    <div class="card card-glass w-100 h-100  p-3">
     <div class="d-flex flex-column align-items-start text-start flex-grow-1">
-        <div class="stars mb-2">★★★★☆</div>
+        <div class="stars mb-2">
+    {% for i in 1..5 %}
+        {% if i <= review.rate %}★{% else %}☆{% endif %}
+    {% endfor %}
+</div>
         <p class="text-white fst-italic fs-5 my-3">{{ review.content }}</p>
          <p class="text-white mb-5 fs-6">{{ review.author }}</p>
     </div>
