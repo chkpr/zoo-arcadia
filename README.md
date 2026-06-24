@@ -1,3 +1,8 @@
+<p>
+  <img src="https://github.com/user-attachments/assets/b864d49f-b95b-4ccc-9596-1e9708883a96" width="30%" alt="Zoo Arcadia Homepage hero"/>
+  <img src="https://github.com/user-attachments/assets/5670352f-8d59-455e-9fa4-d40691825a67" width="30%"alt="Zoo Arcadia homepage - presentation of the zoo and zoo map"/>
+  <img src="https://github.com/user-attachments/assets/c5e953bf-ccae-4d03-add1-aa7c03fc87bd" width="30%"alt="Zoo Arcadia homepage - presentation of the zoo habitats"/>
+</p>
 # Zoo Arcadia
 
 Web application for the management of Zoo Arcadia, built with Symfony 7.1 and a dual database architecture (MySQL + MongoDB).
