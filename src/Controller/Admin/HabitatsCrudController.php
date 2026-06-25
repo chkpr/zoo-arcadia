@@ -26,7 +26,12 @@ class HabitatsCrudController extends AbstractCrudController
         $habitatImagePath = $mappingsParams['habitat']['uri_prefix'];
 
         yield TextField::new('name', 'Nom');
-        yield TexteditorField::new('Description', 'Description');
+        yield TextField::new('shortDesc', 'Description abrégée');
+        yield TexteditorField::new('description', 'Description générale');
+        yield TextField::new('habitatPresentationSubtitle', 'Sous-titre de la description');
+        yield TextareaField::new('longDesc', 'Description détaillée')->hideOnIndex();
+        yield ImageField::new('longDescImg', 'Image description détaillée')->setBasePath($habitatImagePath)->hideOnForm();
+        yield TextareaField::new('longDescImgFile')->setFormType(VichImageType::class)->hideOnIndex();
         yield ImageField::new('imageName', 'Image')->setBasePath($habitatImagePath)->hideOnForm();
         yield TextareaField::new('imageFile')->setFormType(VichImageType::class)->hideOnIndex();
 

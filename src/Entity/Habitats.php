@@ -46,6 +46,18 @@ class Habitats
     #[ORM\Column(length: 255)]
     private ?string $shortDesc = null;
 
+    #[ORM\Column(type: 'text', nullable:true, name: 'long_desc')]
+    private ?string $longDesc = null;
+
+    #[ORM\Column(type: 'string', nullable: true, name: 'long_desc_img')]
+    private ?string $longDescImg = null;
+
+    #[ORM\Column(type: 'string', nullable: true, name: 'habitat_presentation_subtitle')]
+    private ?string $habitatPresentationSubtitle = null;
+
+#[Vich\UploadableField(mapping: 'habitat', fileNameProperty: 'longDescImg')]
+private ?File $longDescImgFile = null;
+
     public function __construct()
     {
         $this->animals = new ArrayCollection();
@@ -179,8 +191,58 @@ class Habitats
 
     public function setShortDesc(string $shortDesc): static
     {
-        $this->name = $shortDesc;
+        $this->shortDesc = $shortDesc;
 
         return $this;
     }
+
+    public function getLongDesc(): ?string
+    {
+        return $this->longDesc;
+    }
+
+    public function setLongDesc(string $longDesc): static
+    {
+        $this->longDesc = $longDesc;
+
+        return $this;
+    }
+
+    public function getLongDescImg(): ?string
+{
+    return $this->longDescImg;
+}
+
+public function setLongDescImg(?string $longDescImg): static
+{
+    $this->longDescImg = $longDescImg;
+    return $this;
+}
+
+public function getLongDescImgFile(): ?File
+{
+    return $this->longDescImgFile;
+}
+
+public function setLongDescImgFile(?File $longDescImgFile): static
+{
+    $this->longDescImgFile = $longDescImgFile;
+    if ($longDescImgFile !== null) {
+        $this->updatedAt = new \DateTimeImmutable();
+    }
+    return $this;
+}
+
+    public function getHabitatPresentationSubtitle(): ?string
+    {
+        return $this->habitatPresentationSubtitle;
+    }
+
+    public function setHabitatPresentationSubtitle(string $habitatPresentationSubtitle): static
+    {
+        $this->habitatPresentationSubtitle = $habitatPresentationSubtitle;
+
+        return $this;
+    }
+
 }

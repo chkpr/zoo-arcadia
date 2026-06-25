@@ -22,16 +22,40 @@
     </div>
   </div>
 
+
   <div class="bg-arcadia-dark position-relative shadow-arcadia-dark">
-    <div class="container">
-      <div class="row text-center" id="decouvrir">
-        <h2 class="display-4 fw-bold my-5 py-5">Habitats</h2>
+  
+    <section class="habitats-presentation">
+      <img src="{{ asset ('build/images/zoo_map_habitats.png')}}" class="me-5 pe-5 zoo-map-habitats" alt="Carte du Zoo Arcadia montrant la localisation des trois habitats avec leurs animaux emblématiques">
+        <div class="habitats-presentation-text w-50">
+            <p class="eyebrow-text">Habitats</p>
+            <h2 class="text-light section-title">Trois écosystèmes reconstitués pour 18 espèces</h2>
+            <p class="text-light mt-5">Chaque habitat du Zoo Arcadia a été conçu pour reproduire fidèlement 
+            les conditions naturelles de vie de ses résidents. Loin d'une simple mise en scène, 
+            ces espaces sont pensés comme de véritables écosystèmes vivants, où la faune 
+            et la flore interagissent dans un équilibre soigneusement préservé.</p>
+            <p class="text-light">De la chaleur aride de la savane à l'humidité dense de la jungle, 
+            en passant par les eaux calmes du marais, chaque environnement offre 
+            à ses habitants les ressources, l'espace et les conditions climatiques 
+            dont ils ont besoin pour s'épanouir.</p>
+            <p class="text-light">Parcourez les trois habitats et découvrez comment le Zoo Arcadia place 
+            le bien-être animal au cœur de chaque décision, tout en vous invitant 
+            à une immersion unique au cœur de la faune sauvage.</p>
+        </div>
+    </section>
+
+    <div class="row g-4 my-5 py-5">
         {% for habitat in habitats %}
-        {% include "partials/_section.habitats.html.twig" %}
+        {% include "partials/_habitat.presentation.html.twig" with { reverse: loop.index is even } %}
         {% endfor %}
-      </div>
     </div>
   </div>
+
+  
+
+  </div>
+
+
 
 </div>
 

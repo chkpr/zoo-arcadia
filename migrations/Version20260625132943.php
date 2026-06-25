@@ -1,0 +1,33 @@
+<?php
+
+declare(strict_types=1);
+
+namespace DoctrineMigrations;
+
+use Doctrine\DBAL\Schema\Schema;
+use Doctrine\Migrations\AbstractMigration;
+
+/**
+ * Auto-generated Migration: Please modify to your needs!
+ */
+final class Version20260625132943 extends AbstractMigration
+{
+    public function getDescription(): string
+    {
+        return '';
+    }
+
+    public function up(Schema $schema): void
+    {
+        // this up() migration is auto-generated, please modify it to your needs
+        $this->addSql('ALTER TABLE habitats ADD long_desc LONGTEXT DEFAULT NULL');
+        $this->addSql('ALTER TABLE reviews CHANGE rate rate SMALLINT NOT NULL, CHANGE status status TINYINT(1) NOT NULL');
+    }
+
+    public function down(Schema $schema): void
+    {
+        // this down() migration is auto-generated, please modify it to your needs
+        $this->addSql('ALTER TABLE reviews CHANGE rate rate TINYINT(1) DEFAULT NULL, CHANGE status status TINYINT(1) DEFAULT NULL');
+        $this->addSql('ALTER TABLE habitats DROP long_desc');
+    }
+}

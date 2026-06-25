@@ -1,0 +1,23 @@
+
+    <section class="habitat-presentation-container my-5 py-5 {{ reverse ? 'flex-row-reverse' : 'flex-row' }}">
+<div class="w-50 ms-5 ps-5 text-light">
+            <p class="eyebrow-text">{{ habitat.shortDesc }}</p>
+            <h4 class="text-light">{{ habitat.name }}</h4>
+            <h2 class="mb-5"> {{ habitat.habitatPresentationSubtitle}} </h2>
+            <div class="w-75 habitats-presentation-text">
+            {% for paragraph in habitat.longDesc|split('\n') %}
+                {% if paragraph %}
+                    <p>{{ paragraph }}</p>
+                {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+            {% if habitat.longDescImg %}
+        <img src="{{ vich_uploader_asset(habitat, 'longDescImgFile') }}" class="w-25" alt="{{habitat.name}}">
+    {% else %}
+        <img src="{{ asset('build/images/default-habitat.png') }}" class="card-img-top" alt="Photo manquante">
+    {% endif %}
+        <div>
+
+        </div>
+        </section>
