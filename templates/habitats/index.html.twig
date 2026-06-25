@@ -4,31 +4,35 @@
 
 {% block body %}
 
-<div class="d-flex align-items-end">
-    <div class="position-absolute d-flex flex-column align-items-start pb-5 mb-3 ps-5 ms-5">
-        <h1 class="display-3 fw-bold text-light">Habitats</h1>
-            <div class="">
-                <h2 class="display-6 fw-bold text-light">Les animaux du zoo se répartissent sur trois habitats
-                qui reproduisent chacun les conditions de vie de leur milieu naturel.</h2>
-                    <div class="">
-                        <a href="{{ path('app_habitats') }}#decouvrir" class="btn btn-primary">Découvrir</a>
-                        
-                    </div>
-            </div>
+<div class="position-relative bg-arcadia-dark">
+  <div class="d-flex align-items-end">
+    <div class="position-absolute d-flex flex-column align-items-start cover-text ps-5 ms-5 w-75" style="z-index: 2;">
+        <div style="z-index: 2;">
+      <h1 class="fw-bold text-light">Habitats</h1>
+      <h2 class="display-6 fw-bold text-light">Les animaux du zoo se répartissent sur trois habitats
+      qui reproduisent chacun les conditions de vie de leur milieu naturel.</h2>
+      <a href="{{ path('app_habitats') }}#decouvrir" class="cta-button mt-4">Découvrir</a>
+      </div>
+    </div
+    <div class="position-relative w-100">
+      <img src="{{ asset ('build/images/cover_habitats_2.jpg')}}" class="w-100 h-100 img-fluid d-block cover-img" alt="Une girafe debout dans l'herbe à l'orée d'une forêt, au coucher du soleil">
+      <div class="position-absolute bottom-0 start-0 end-0"
+          style="height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
+      </div>
     </div>
-
-    <img src="{{ asset ('build/images/cover_habitats.png')}}" class="w-100 h-100 img-fluid" alt="Un guépard allongé dans un arbre vu en gros plan">
-
   </div>
 
-<div class="container">
-    <div class="row text-center" id="decouvrir">
+  <div class="bg-arcadia-dark position-relative shadow-arcadia-dark">
+    <div class="container">
+      <div class="row text-center" id="decouvrir">
         <h2 class="display-4 fw-bold my-5 py-5">Habitats</h2>
         {% for habitat in habitats %}
         {% include "partials/_section.habitats.html.twig" %}
         {% endfor %}
-        <div id="decouvrir"></div>
+      </div>
     </div>
+  </div>
+
 </div>
 
 {% endblock %}
