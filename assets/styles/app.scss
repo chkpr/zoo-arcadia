@@ -1,7 +1,11 @@
-$primary: #eeaf26;
+$primary: #ffd900;
 $secondary: #ffffff;
 
 @import "~bootstrap/scss/bootstrap";
+
+body {
+  background-color: #061700;
+}
 
 .nav-background {
     background: linear-gradient(#0c0c0c, rgba(250, 250, 251, 0));
@@ -94,6 +98,17 @@ h3 {
     color: #c59b08;
 }
 
+.shadow-top-only::before {
+  content: '';
+  position: absolute;
+  top: -150px;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(to bottom, transparent, #040d00);
+  pointer-events: none;
+  z-index: 1;
+}
 
 .overlay {
     z-index: 10;
